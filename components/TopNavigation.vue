@@ -8,18 +8,21 @@
       </NuxtLink>
 
       <div class="flex gap-6">
-        <div v-for="(category, index) in categories" :key="index">
-          <div>
-            <p class="text-sm text-gray-300 font-normal">
-              {{ category.name }}
-            </p>
-          </div>
+        <div
+          class="cursor-pointer"
+          v-for="(category, index) in categories"
+          :key="index"
+        >
+          <p class="text-sm text-gray-400 font-normal hover:text-white">
+            {{ category.name }}
+          </p>
         </div>
       </div>
 
       <div class="flex gap-6">
         <div class="cursor-pointer"><IconSearch /></div>
         <div class="cursor-pointer"><IconShoppingCart /></div>
+        <div class="cursor-pointer"><IconAccount /></div>
       </div>
     </div>
   </div>

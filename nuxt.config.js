@@ -29,6 +29,10 @@ export default {
         path: '~/components/icons/',
         prefix: 'Icon',
       },
+      {
+        path: '~/components/elements/',
+        prefix: 'Element',
+      },
     ],
   },
 
