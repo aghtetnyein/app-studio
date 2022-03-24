@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="fixed w-full">
     <div
       class="text-lg font-semibold bg-primary px-36 h-10 flex items-center justify-between"
     >
@@ -20,9 +20,9 @@
       </div>
 
       <div class="flex gap-6">
-        <div class="cursor-pointer"><IconSearch /></div>
-        <div class="cursor-pointer"><IconShoppingCart /></div>
-        <div class="cursor-pointer"><IconAccount /></div>
+        <div class="cursor-pointer text-gray-200"><IconSearch /></div>
+        <div class="cursor-pointer text-gray-200"><IconShoppingCart /></div>
+        <div class="cursor-pointer text-gray-200"><IconAccount /></div>
       </div>
     </div>
   </div>

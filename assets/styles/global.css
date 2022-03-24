@@ -1,0 +1,31 @@
+/* @font-face {
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('~assets/fonts/SFPro/SFPRODISPLAYREGULAR.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('~assets/fonts/SFPro/SFPRODISPLAYMEDIUM.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('~assets/fonts/SFPro/SFPRODISPLAYBOLD.TTF') format('truetype');
+} */
+
+html {
+  font-family: 'SF Pro';
+}
+
+body {
+  background-color: #fbfbfd;
+}

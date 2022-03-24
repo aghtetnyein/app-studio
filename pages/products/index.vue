@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="font-bold">This is all products ?</p>
+    <p class="font-bold">This is all products</p>
     <ElementProductCard />
   </div>
 </template>

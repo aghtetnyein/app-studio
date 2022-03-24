@@ -1,6 +1,7 @@
 <template>
   <div>
     <TopNavigation />
-    <Nuxt />
+    <div class="pt-10"><Nuxt /></div>
+    <Footer />
   </div>
 </template>
