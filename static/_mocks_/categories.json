@@ -1,0 +1,49 @@
+{
+  "categories": [
+    {
+      "name": "Mac",
+      "slug": "mac",
+      "icon": "💻"
+    },
+    {
+      "name": "iPad",
+      "url": "i-pad",
+      "icon": "📱"
+    },
+    {
+      "name": "iPhone",
+      "url": "i-phone",
+      "icon": "📱"
+    },
+    {
+      "name": "Watch",
+      "url": "watch",
+      "icon": "⌚"
+    },
+    {
+      "name": "AirPods",
+      "url": "air-pods",
+      "icon": "🎧"
+    },
+    {
+      "name": "TV & Home",
+      "url": "tv-home",
+      "icon": "📺"
+    },
+    {
+      "name": "Only on Apple",
+      "url": "only-apple",
+      "icon": "🍎"
+    },
+    {
+      "name": "Accessories",
+      "url": "accessories",
+      "icon": "🎁"
+    },
+    {
+      "name": "Support",
+      "url": "support",
+      "icon": "💁"
+    }
+  ]
+}

@@ -8,17 +8,29 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    // CSS file in the project
+    '@/assets/styles/global.css',
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  // components: true,
+  components: {
+    dirs: [
+      '~/components',
+      {
+        path: '~/components/icons/',
+        prefix: 'Icon',
+      },
+    ],
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -51,4 +63,14 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // tailwind.config.js: https://tailwindcss.nuxtjs.org/configuration
+  // tailwindcss: {
+  //   cssPath: '~/assets/css/global.css',
+  //   configPath: 'tailwind.config.js',
+  //   exposeConfig: false,
+  //   config: {},
+  //   injectPosition: 0,
+  //   viewer: true,
+  // },
 }
