@@ -23,7 +23,7 @@
         </div>
 
         <div class="flex items-center gap-4 lg:gap-6">
-          <div class="flex items-center relative">
+          <div class="flex lg:hidden items-center relative">
             <input
               class="py-1 px-2 rounded-md w-full border border-gray-500 focus:outline-none focus:border-gray-400 focus:ring-0.5 focus:ring-gray-400 text-sm text-black"
               type="text"
