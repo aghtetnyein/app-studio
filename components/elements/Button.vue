@@ -9,7 +9,13 @@
       <p class="text-md hover:underline">{{ label }}</p>
       <div><IconRightArrow /></div>
     </button>
-    <button v-if="variant === 'contained'" :type="type">Contained</button>
+    <button
+      v-if="variant === 'contained'"
+      :type="type"
+      class="bg-blue-500 text-white rounded-full px-5 py-1 text-sm"
+    >
+      {{ label }}
+    </button>
   </div>
 </template>
 

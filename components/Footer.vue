@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full bg-gray-100 px-36 py-6">
+  <div class="w-full h-full bg-gray-100 px-4 lg:px-10 xl:px-36 py-6">
     <div class="space-y-4 pb-6 border-b border-gray-300">
       <p class="text-xs text-gray-400">
         To access and use all the features of Apple Card, you must add Apple
@@ -29,7 +29,7 @@
       </p>
     </div>
 
-    <div class="mt-6 flex justify-between">
+    <div class="mt-6 flex flex-col md:flex-row gap-8 justify-between">
       <div class="flex gap-6">
         <p class="text-xs text-gray-400">
           Copyright © 2022 App Studio Co.,ltd. All rights reserved. Privacy
@@ -59,6 +59,6 @@
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
-  name: 'footer',
+  name: 'app-footer',
 })
 </script>

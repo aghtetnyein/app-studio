@@ -1,11 +1,13 @@
 <template>
   <div>
-    <div class="h-10 bg-gray-200 flex items-center justify-center gap-4">
+    <div
+      class="py-2 px-4 xl:px-36 bg-gray-200 flex items-center justify-center gap-4"
+    >
       <img src="/MobileWorldLogo.png" class="h-6" alt="mobile-world-logo" />
-      <p class="text-xs">
+      <marquee class="text-xs text-gray-700">
         Website မှ ကြိုက်နှစ်သက်ရာ မည်သည့်ပစ္စည်းကိုမဆို ဝယ်ယူအားပေးမှုအတွက် ၄၈
         နာရီအတွင်း အိမ်တိုင်ရာရောက် အခမဲ့ဝန်ဆောင်မှုဖြင့် ဆောင်ရွက်ပေးနေပါသည်။
-      </p>
+      </marquee>
     </div>
 
     <div class="py-20">
@@ -19,13 +21,15 @@
         </p>
         <div class="mt-3 flex items-center justify-center gap-12">
           <ElementButton type="button" variant="text" label="Learn more" />
-          <ElementButton type="button" variant="text" label="Shop" />
+          <NuxtLink to="/products">
+            <ElementButton type="button" variant="text" label="Shop"
+          /></NuxtLink>
         </div>
       </div>
-      <div class="mt-4 w-full flex justify-center">
+      <div class="px-2 mt-4 w-full flex justify-center">
         <img
           src="/_mocks_/images/iPhone13ProLanding.png"
-          class="h-96"
+          class="h-52 md:h-64 xl:h-96"
           alt="iPhone13Pro"
         />
       </div>
@@ -46,12 +50,18 @@
           <ElementButton type="button" variant="text" label="Pre-order" />
         </div>
       </div>
-      <div class="mt-4 w-full flex justify-center">
-        <img src="/_mocks_/images/iPhoneSE.png" class="h-80" alt="iPhoneSE" />
+      <div class="mt-4 w-full flex justify-center px-4">
+        <img
+          src="/_mocks_/images/iPhoneSE.png"
+          class="h-36 md:h-52 xl:h-80"
+          alt="iPhoneSE"
+        />
       </div>
     </div>
 
-    <div class="bg-black py-12 px-52 flex gap-8 items-center justify-center">
+    <div
+      class="bg-black py-12 lg:px-28 xl:px-52 flex flex-col lg:flex-row gap-8 items-center justify-center"
+    >
       <div class="w-full flex flex-col items-center text-center">
         <img src="/_mocks_/images/iPadAirTitle.png" alt="" class="h-14" />
         <p class="mt-4 text-2xl text-gray-100 font-normal">
@@ -68,15 +78,17 @@
       <div class="flex justify-center">
         <img
           src="/_mocks_/images/iPadAir.png"
-          class="w-full h-full"
+          class="w-80 h-80 lg:w-full lg:h-full"
           alt="iPadAir"
         />
       </div>
     </div>
 
-    <div class="grid grid-cols-2 p-6 gap-6">
+    <div class="grid md:grid-cols-2 p-6 gap-6">
       <!-- StudioDisplay -->
-      <div class="bg-gray-100 py-8 rounded-lg flex flex-col justify-between">
+      <div
+        class="col-span-2 md:col-span-1 bg-gray-100 py-8 rounded-lg flex flex-col justify-between"
+      >
         <div class="w-full flex flex-col items-center text-center">
           <h2 class="text-4xl text-gray-800 font-medium">Studio Display</h2>
           <p class="mt-2 text-xl text-gray-700 font-normal">
@@ -93,14 +105,16 @@
         <div class="mt-8 flex justify-center">
           <img
             src="/_mocks_/images/StudioDisplay.png"
-            class="h-72"
+            class="w-52 xl:w-72 object-cover"
             alt="StudioDisplay"
           />
         </div>
       </div>
 
       <!-- Mac Studio -->
-      <div class="bg-gray-100 py-8 rounded-lg flex flex-col justify-between">
+      <div
+        class="col-span-2 md:col-span-1 bg-gray-100 py-8 rounded-lg flex flex-col justify-between"
+      >
         <div class="w-full flex flex-col items-center text-center">
           <h2 class="text-4xl text-gray-800 font-medium">Mac Studio</h2>
           <p class="mt-2 text-xl text-gray-700 font-normal">Empower station.</p>
@@ -115,14 +129,16 @@
         <div class="mt-8 flex justify-center">
           <img
             src="/_mocks_/images/MacStudio.png"
-            class="h-52"
+            class="w-52 xl:w-72 object-cover"
             alt="MacStudio"
           />
         </div>
       </div>
 
       <!-- iPhone 13 -->
-      <div class="bg-gray-100 pt-8 rounded-lg flex flex-col justify-between">
+      <div
+        class="col-span-2 md:col-span-1 bg-gray-100 pt-8 rounded-lg flex flex-col justify-between"
+      >
         <div class="w-full flex flex-col items-center text-center">
           <h2 class="text-4xl text-gray-800 font-medium">iPhone 13</h2>
           <p class="mt-2 text-xl text-gray-700 font-normal">Now in Green.</p>
@@ -137,14 +153,16 @@
         <div class="mt-8 flex justify-center">
           <img
             src="/_mocks_/images/iPhone13ProductLanding.png"
-            class="h-60"
+            class="w-64 xl:w-72 object-cover"
             alt="iPhone13"
           />
         </div>
       </div>
 
       <!-- Watch -->
-      <div class="bg-gray-100 py-8 rounded-lg flex flex-col justify-between">
+      <div
+        class="col-span-2 md:col-span-1 bg-gray-100 py-8 rounded-lg flex flex-col justify-between"
+      >
         <div class="w-full flex flex-col items-center text-center">
           <img
             src="/_mocks_/images/watchTitle.png"
@@ -160,7 +178,11 @@
           </div>
         </div>
         <div class="mt-8 flex justify-center">
-          <img src="/_mocks_/images/Watch.png" class="h-60" alt="Watch" />
+          <img
+            src="/_mocks_/images/Watch.png"
+            class="w-52 xl:w-72 object-cover"
+            alt="Watch"
+          />
         </div>
       </div>
 
@@ -179,7 +201,7 @@
           </div>
         </div>
         <div class="mt-8 flex justify-center">
-          <img src="/_mocks_/images/Card.png" class="h-80" alt="Card" />
+          <img src="/_mocks_/images/Card.png" class="h-52 xl:h-80" alt="Card" />
         </div>
       </div>
     </div>

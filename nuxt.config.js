@@ -33,6 +33,10 @@ export default {
         path: '~/components/elements/',
         prefix: 'Element',
       },
+      {
+        path: '~/components/svgs/',
+        prefix: 'Svg',
+      },
     ],
   },
 
