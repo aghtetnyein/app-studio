@@ -45,7 +45,7 @@
             <button
               class="text-white w-5 h-10 relative focus:outline-none"
               @click="toggleMobileNav()"
-              @blur="toggleMobileNav()"
+              @blur="closeMobileNav()"
             >
               <span class="sr-only">Open main menu</span>
               <div
@@ -164,6 +164,9 @@ export default Vue.extend({
   methods: {
     toggleMobileNav() {
       this.mobileNavOpen = !this.mobileNavOpen
+    },
+    closeMobileNav() {
+      this.mobileNavOpen = false
     },
   },
 })
