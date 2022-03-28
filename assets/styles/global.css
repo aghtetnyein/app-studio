@@ -1,29 +1,31 @@
-/* @font-face {
-  font-family: 'SF Pro';
+@font-face {
+  font-family: 'Xsphere';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('~assets/fonts/SFPro/SFPRODISPLAYREGULAR.TTF') format('truetype');
+  src: local('Xsphere'),
+    url(~assets/fonts/xsphere-regular.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: 'SF Pro';
-  font-style: normal;
+  font-family: 'Xsphere';
+  font-style: medium;
   font-weight: 500;
   font-display: swap;
-  src: url('~assets/fonts/SFPro/SFPRODISPLAYMEDIUM.TTF') format('truetype');
+  src: local('Xsphere'),
+    url(~assets/fonts/xsphere-medium.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: 'SF Pro';
-  font-style: normal;
+  font-family: 'Xsphere';
+  font-style: bold;
   font-weight: 600;
   font-display: swap;
-  src: url('~assets/fonts/SFPro/SFPRODISPLAYBOLD.TTF') format('truetype');
-} */
+  src: local('Xsphere'), url(~assets/fonts/xsphere-bold.ttf) format('truetype');
+}
 
 html {
-  font-family: 'SF Pro';
+  font-family: 'Xsphere';
 }
 
 body {

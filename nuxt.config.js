@@ -26,6 +26,10 @@ export default {
     dirs: [
       '~/components',
       {
+        path: '~/components/forms/',
+        prefix: 'Form',
+      },
+      {
         path: '~/components/icons/',
         prefix: 'Icon',
       },

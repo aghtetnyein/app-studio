@@ -12,7 +12,7 @@
 
     <div class="py-20">
       <div class="flex flex-col items-center text-center">
-        <h2 class="text-5xl text-gray-800 font-medium">iPhone 13 Pro</h2>
+        <h2 class="text-5xl text-gray-800 font-bold">iPhone 13 Pro</h2>
         <p class="mt-4 text-2xl text-gray-700 font-normal">
           Now in Alpine Green.
         </p>

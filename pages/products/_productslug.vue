@@ -37,132 +37,184 @@
       <div
         class="w-full xl:w-4/5 md:overflow-scroll scrollbar-hidden px-8 md:px-0 md:pt-20 pb-12"
       >
-        <div class="lg:px-6">
-          <div>
-            <h1 class="text-red-500 font-thin text-xl">New</h1>
-            <p class="text-4xl mt-2 font-semibold">Buy iPhone 13 Pro</p>
-            <p class="text-sm text-gray-600 mt-2">
-              Pre-order Now.Alpine Green available starting 3.18.
-            </p>
-            <p class="text-sm mt-4 font-semibold">Choose your model.</p>
-          </div>
-          <div class="mt-6 flex flex-col gap-4">
-            <div
-              class="flex justify-between items-center border-gray-300 border rounded-xl hover:border-blue-500 cursor-pointer"
-            >
-              <div class="p-4">
-                <h1>iPhone 13 Pro</h1>
-                <p class="text-xs">6.7 inch display<sup>1</sup></p>
-              </div>
-              <div class="p-4">
-                <p>From 3,100,000 Ks or <br />50,800 Baht</p>
+        <form id="phoneAddToBag" @submit.prevent="submitForm" method="post">
+          <!-- phone model -->
+          <div class="lg:px-6">
+            <div>
+              <h1 class="text-red-500 font-thin text-xl">New</h1>
+              <p class="text-4xl mt-2 font-semibold">Buy iPhone 13 Pro</p>
+              <p class="text-sm text-gray-600 mt-2">
+                Pre-order Now.Alpine Green available starting 3.18.
+              </p>
+              <p class="text-sm mt-4 font-semibold">Choose your model.</p>
+            </div>
+            <div class="mt-6 flex flex-col gap-4">
+              <div v-for="(phoneModel, index) in phoneModels" :key="index">
+                <input
+                  hidden
+                  type="radio"
+                  :id="phoneModel.name"
+                  :value="phoneModel.name"
+                  v-model="activePhoneModel"
+                />
+                <label :for="phoneModel.name">
+                  <div
+                    :class="`flex justify-between items-center border-gray-300 border rounded-xl xl:hover:border-blue-500 cursor-pointer ${
+                      activePhoneModel === phoneModel.name && 'border-blue-500'
+                    }`"
+                  >
+                    <div class="p-4">
+                      <h1>{{ phoneModel.name }}</h1>
+                      <p class="text-xs">
+                        {{ phoneModel.displaySize }} inch display<sup>1</sup>
+                      </p>
+                    </div>
+                    <div class="p-4">
+                      <p>
+                        From {{ phoneModel.mmPrice }} Ks or <br />{{
+                          phoneModel.tbPrice
+                        }}
+                        Baht
+                      </p>
+                    </div>
+                  </div>
+                </label>
               </div>
             </div>
-            <div
-              class="flex justify-between items-center border-gray-300 border rounded-xl hover:border-blue-500 cursor-pointer"
-            >
-              <div class="p-4">
-                <h1>iPhone 13 Pro</h1>
-                <p class="text-xs">6.7 inch display<sup>1</sup></p>
-              </div>
-              <div class="p-4">
-                <p>From 3,100,000 Ks or <br />50,800 Baht</p>
+          </div>
+
+          <div class="border-b border-gray-200 my-7"></div>
+
+          <!-- phone color -->
+          <div :class="`lg:px-6 ${activePhoneModel === '' && 'opacity-50'}`">
+            <h1 class="mb-4 text-sm font-semibold">Choose your finish.</h1>
+            <div class="grid grid-cols-2 gap-4">
+              <div v-for="(color, index) in colors" :key="index">
+                <input
+                  hidden
+                  :disabled="activePhoneModel === ''"
+                  type="radio"
+                  :id="color.name"
+                  :value="color.name"
+                  v-model="activeColor"
+                />
+                <label :for="color.name"
+                  ><div
+                    :class="`w-full text-center border-gray-300 border rounded-xl p-5 px-6
+                    ${
+                      activePhoneModel !== '' &&
+                      'xl:hover:border-blue-500 cursor-pointer'
+                    } 
+                    ${activeColor === color.name && 'border-blue-500'}`"
+                  >
+                    <div
+                      class="w-7 h-7 rounded-full mx-auto mb-2"
+                      :style="`background-color: ${color.color}`"
+                    ></div>
+                    <span class="text-xs">{{ color.name }}</span>
+                  </div></label
+                >
               </div>
             </div>
           </div>
-        </div>
-        <div class="border-b border-gray-200 my-7"></div>
-        <div class="lg:px-6">
-          <h1 class="mb-4 text-sm font-semibold">Choose your finish.</h1>
-          <div class="grid grid-cols-2 gap-4">
-            <div
-              class="w-full text-center border-gray-300 border rounded-xl hover:border-blue-500 p-5 px-6 cursor-pointer"
-            >
+          <div class="border-b border-gray-200 my-7"></div>
+
+          <!-- capacity -->
+          <div :class="`lg:px-6 ${activeColor === '' && 'opacity-50'}`">
+            <h1 class="my-4 text-sm font-semibold">Choose your capacity.</h1>
+            <div class="grid grid-cols-2 gap-4">
               <div
-                class="w-7 h-7 rounded-full mx-auto mb-2"
-                style="background-color: #496a4d"
-              ></div>
-              <span class="text-xs">Alpine green</span>
-            </div>
-            <div
-              class="w-full text-center border-gray-300 border rounded-xl hover:border-blue-500 p-5 cursor-pointer"
-            >
-              <div class="w-7 h-7 bg-red-100 rounded-full mx-auto mb-2"></div>
-              <span class="text-xs">Rose</span>
-            </div>
-            <div
-              class="w-full text-center border-gray-300 border rounded-xl hover:border-blue-500 p-5 cursor-pointer"
-            >
-              <div class="w-7 h-7 bg-gray-200 rounded-full mx-auto mb-2"></div>
-              <span class="text-xs">Silver</span>
-            </div>
-            <div
-              class="w-full text-center border-gray-300 border rounded-xl hover:border-blue-500 p-5 cursor-pointer"
-            >
-              <div class="w-7 h-7 bg-blue-500 rounded-full mx-auto mb-2"></div>
-              <span class="text-xs">Navy Blue</span>
-            </div>
-          </div>
-        </div>
-        <div class="border-b border-gray-200 my-7"></div>
-        <div class="lg:px-6">
-          <h1 class="my-4 text-sm font-semibold">Choose your capacity.</h1>
-          <div class="grid grid-cols-2 gap-4">
-            <div
-              class="w-full text-center border-gray-300 border rounded-xl hover:border-blue-500 p-2 py-4 cursor-pointer"
-            >
-              <h1 class="text-2xl mb-2 font-semibold">128GB<sup>2</sup></h1>
-              <p class="text-xs">From 3,100,000 Ks or <br />50,800 Baht</p>
-            </div>
-            <div
-              class="w-full text-center border-gray-300 border rounded-xl hover:border-blue-500 p-2 py-4 cursor-pointer"
-            >
-              <h1 class="text-2xl mb-2 font-semibold">256GB<sup>2</sup></h1>
-              <p class="text-xs">From 3,400,000 Ks or <br />51,800 Baht</p>
-            </div>
-            <div
-              class="w-full text-center border-gray-300 border rounded-xl hover:border-blue-500 p-2 py-4 cursor-pointer"
-            >
-              <h1 class="text-2xl mb-2 font-semibold">512GB<sup>2</sup></h1>
-              <p class="text-xs">From 3,100,000 Ks or <br />50,800 Baht</p>
-            </div>
-            <div
-              class="w-full text-center border-gray-300 border rounded-xl hover:border-blue-500 p-2 py-4 cursor-pointer"
-            >
-              <h1 class="text-2xl mb-2 font-semibold">1TB<sup>2</sup></h1>
-              <p class="text-xs">From 3,400,000 Ks or <br />51,800 Baht</p>
+                class="cursor-pointer"
+                v-for="(capacity, index) in capacities"
+                :key="index"
+              >
+                <input
+                  hidden
+                  :disabled="activeColor === ''"
+                  type="radio"
+                  :id="capacity.name"
+                  :value="capacity.name"
+                  v-model="activeCapacity"
+                />
+                <label :for="capacity.name"
+                  ><div
+                    :class="`w-full text-center border-gray-300 border rounded-xl p-2 py-4
+                    ${
+                      activeColor !== '' &&
+                      'xl:hover:border-blue-500 cursor-pointer'
+                    }
+                    ${activeCapacity === capacity.name && 'border-blue-500'}`"
+                  >
+                    <h1 class="text-2xl mb-2 font-semibold">
+                      {{ capacity.name }}<sup>2</sup>
+                    </h1>
+                    <p class="text-xs">
+                      From {{ capacity.mmPrice }} Ks or <br />{{
+                        capacity.tbPrice
+                      }}
+                      Baht
+                    </p>
+                  </div></label
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <div class="border-b border-gray-200 my-7"></div>
-        <div class="lg:px-6">
-          <h1 class="my-4 text-sm font-semibold">Choose your currency.</h1>
-          <div class="grid grid-cols-2 gap-4">
-            <div
-              class="text-center border-gray-300 border rounded-xl hover:border-blue-500 p-3 py-6 cursor-pointer"
-            >
-              <h1 class="text-2xl mb-2 font-semibold">MMK</h1>
-            </div>
-            <div
-              class="text-center border-gray-300 border rounded-xl hover:border-blue-500 p-3 py-6 cursor-pointer"
-            >
-              <h1 class="text-2xl mb-2 font-semibold">TBH</h1>
+          <div class="border-b border-gray-200 my-7"></div>
+
+          <!-- currency -->
+          <div :class="`lg:px-6 ${activeCapacity === '' && 'opacity-50'}`">
+            <h1 class="my-4 text-sm font-semibold">Choose your currency.</h1>
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="cursor-pointer"
+                v-for="(currency, index) in currencies"
+                :key="index"
+              >
+                <input
+                  hidden
+                  :disabled="activeCapacity === ''"
+                  type="radio"
+                  :id="currency.name"
+                  :value="currency.name"
+                  v-model="activeCurrency"
+                />
+                <label :for="currency.name">
+                  <div
+                    :class="`text-center border-gray-300 border rounded-xl p-3 py-6
+                    ${
+                      activeCapacity !== '' &&
+                      'xl:hover:border-blue-500 cursor-pointer'
+                    }
+                    ${activeCurrency === currency.name && 'border-blue-500'}`"
+                  >
+                    <h1 class="text-2xl font-semibold">{{ currency.name }}</h1>
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="bg-gray-100 h-52 rounded-xl lg:mx-6 my-6 mb-0 p-6">
-          <h1 class="text-2xl">3,400,000 Ks</h1>
-          <button
-            class="w-full bg-blue-500 py-2 rounded-lg text-white text-sm mt-4"
+          <div
+            :class="`bg-gray-100 rounded-xl lg:mx-6 my-6 mb-0 p-6 ${
+              activeCurrency === '' && 'opacity-50'
+            }`"
           >
-            Add to Bag
-          </button>
-          <p class="text-sm font-semibold mt-3">Still deciding?</p>
-          <span class="text-sm"
-            >Add this item to a list and easily come back to<br />
-            it later.</span
-          >
-        </div>
+            <h1 class="text-2xl">3,400,000 Ks</h1>
+            <button
+              :disabled="activeCurrency === ''"
+              type="submit"
+              :class="`w-full bg-blue-500 py-2 rounded-lg text-white text-sm mt-4 ${
+                activeCapacity === '' && 'cursor-default'
+              }`"
+            >
+              Add to Bag
+            </button>
+            <p class="text-sm font-semibold mt-3">Still deciding?</p>
+            <span class="text-sm"
+              >Add this item to a list and easily come back to<br />
+              it later.</span
+            >
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -174,5 +226,101 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'single-product',
   layout: 'products',
+
+  data() {
+    return {
+      phoneModels: [
+        {
+          id: 1,
+          name: 'iPhone 13 Pro',
+          displaySize: '6.5',
+          mmPrice: '3,100,000',
+          tbPrice: '50,800',
+        },
+        {
+          id: 2,
+          name: 'iPhone 13 Pro Max',
+          displaySize: '6.7',
+          mmPrice: '3,100,000',
+          tbPrice: '50,800',
+        },
+      ],
+      colors: [
+        {
+          id: 1,
+          name: 'Alpine green',
+          color: '#496a4d',
+        },
+        {
+          id: 2,
+          name: 'Rose',
+          color: '#ff0066',
+        },
+        {
+          id: 3,
+          name: 'Silver',
+          color: '#c0c0c0',
+        },
+        {
+          id: 4,
+          name: 'Navy Blue',
+          color: '#0066ff',
+        },
+      ],
+      capacities: [
+        {
+          id: 1,
+          name: '128GB',
+          mmPrice: '3,100,000',
+          tbPrice: '50,800',
+        },
+        {
+          id: 2,
+          name: '256GB',
+          mmPrice: '3,400,000',
+          tbPrice: '51,800',
+        },
+        {
+          id: 3,
+          name: '512GB',
+          mmPrice: '3,100,000',
+          tbPrice: '50,800',
+        },
+        {
+          id: 4,
+          name: '1TB',
+          mmPrice: '3,400,000',
+          tbPrice: '51,800',
+        },
+      ],
+      currencies: [
+        {
+          id: 1,
+          name: 'MMK',
+        },
+        {
+          id: 2,
+          name: 'TBH',
+        },
+      ],
+      activePhoneModel: '',
+      activeColor: '',
+      activeCapacity: '',
+      activeCurrency: '',
+    }
+  },
+
+  methods: {
+    submitForm() {
+      let phoneAddToBagValues = {
+        phoneModel: this.activePhoneModel,
+        color: this.activeColor,
+        capacity: this.activeCapacity,
+        currency: this.activeCurrency,
+      }
+      console.log(phoneAddToBagValues)
+      window.alert(JSON.stringify(phoneAddToBagValues))
+    },
+  },
 })
 </script>
